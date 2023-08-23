@@ -5,17 +5,16 @@ Rails.application.routes.draw do
       # Custom index
       # /restaurants/whatever_you_decide
       # verb :path
-      get :top
+      get :top #=> get '/restaurants/top', to: 'restaurants#top'
     end
 
     member do
       # Custom show
       # /restaurants/13/whatever_you_decide
       # verb :path
-      get :chef
+      get :chef #=> get '/restaurants/13/chef', to: 'restaurants#chef'
     end
   end
 
   resources :reviews, only: :destroy
-  # get '/restaurants/top', to: 'restaurants#top'
 end

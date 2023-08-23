@@ -1,8 +1,16 @@
 <h1>New Review</h1>
 
+<%#
+  The route to post the form is: /restaurants/:restaurant_id/reviews
+  In order to set  the correct action in the form tag
+  <form action="/restaurants/13/reviews"></form>
+  simple_form needs to know what is the restaurant
+  so it can replace :restaurant_id by the REAL id, e.g. 13.
+  That's why we need to provide BOTH instances ⤵️
+  the existing Restaurant instance AND the empty Review instance
+%>
+
 <%= simple_form_for [@restaurant, @review] do |f| %>
   <%= f.input :content %>
   <%= f.submit %>
 <% end %>
-
-<form action="/restaurants/13/reviews"></form>
